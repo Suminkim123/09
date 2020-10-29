@@ -6,33 +6,47 @@
 
 
 void print_array(int a[], int size)
-
-
 int main(int argc, char *argv[]) {
 	
 	//array declaration
-	int list[SIZE] = {1, 2, 3, 4};
+	int A[ROWS][COLS] = {
+		{2,3,0}
+		{8,9,1}
+		{7,0,5} };
+		
+	int B[ROWS][COLS] = {
+	    {1,0,0},
+        {0,1,0},
+        {0,0,1}	};
+        
+    int C[ROWS][COLS];
+    
+    addMatrix(A,B,C);
+    printMatrix(C);
 	
-    printf_array(list, SIZE);
-    square_array(list, SIZE);
-    print_array(list, SIZE);
-    
-    return 0;
+	
+	return 0;
     
 }
 
-void square_array(int a[], int size)
+void addMatrix(int A[][COLS], int B[][COLS],  int C[][COLS])
 {
-	int i;
-	for (i=0;i<size;i++)
-	    a[i] = a[i]*a[i];
+	int i, j;
+	
+	//C = A+B
+	for (i=0;i<ROWS;i++)
+	    C[i][j] = A[i][j]+B[i][j];
 }
 
-void print_array(int a[], int size)	
+void printMatrix(int A[][COLS])	
 {
-	int i;
-	for (i=0;i<size;i++)
-	    printf("%3d ", a[i]);
+	
+	
+	//print using for loop
+	int i, j;
+	
+	for (i=0;i<ROWS;i++)
+	    printf("%d ", A[i][j]);
 	printf("/n");	
 	
 	
