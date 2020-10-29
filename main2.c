@@ -6,23 +6,22 @@
 int main(int argc, char *argv[]) {
 	
 	//array declaration
-	int i, average;
-	int sum;
+	int i, 
 	int grade[SIZE];
+	int score[SIZE];
 	
-	printf("input %i scores/n", SIZE);
-	
-	sum = 0;
-	for (i=0;i<SIZE;1++)
-	{ 
-	    scanf("%d", &grade[1]);
-	    sum += grade[i];
+	for (i=0;<SIZE;i++)
+	{
+		grade[i] = rand()%100+1;
 	}
+	
+	//move to score
+	for (i=0;i<SIZE;1++)
+	    score[i] = grade[i];
 	    
-	   for (i=0;i<SIZE;i++) 
-	       printf("grade[%d] = %d/n", i, grade[1]); 
-	    
-	   average = sum/SIZE;
-	   printf("average : %i/n", average);	     
+	for (i=0;i<SIZE;i++)    
+	    printf("score[%d] %i (%i)/n", i, score[i], grade[i]);
+	
+	     
 	return 0;
 }
